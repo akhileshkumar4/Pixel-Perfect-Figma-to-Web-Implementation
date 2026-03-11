@@ -1,0 +1,60 @@
+/* Cross-browser compatibility fixes */
+.feature-card {
+  -webkit-transition: transform 0.3s ease;
+  -moz-transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Smooth scrolling with fallback */
+@media screen and (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Form element consistency */
+input, 
+textarea,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+
+.modal {
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.carousel {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Firefox specific fixes */
+@-moz-document url-prefix() {
+  .form-group input,
+  .form-group textarea {
+    background-color: transparent;
+  }
+}
+
+/* Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  .hero-copy {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Edge/Chrome specific fixes */
+@supports (-ms-ime-align: auto) {
+  .price-card {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}

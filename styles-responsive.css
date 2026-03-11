@@ -1,0 +1,267 @@
+/* Mobile Responsive Styles */
+
+/* Base responsive setup */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+        max-width: 100%;
+    }
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 768px) {
+    /* Header & Navigation */
+    .header-inner {
+        padding: 12px 0;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+
+    /* Hero Section */
+    .hero-copy {
+        padding: 40px 20px;
+    }
+
+    .hero-title {
+        font-size: 42px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    /* Video Section */
+    .video-wrapper {
+        padding: 10px;
+    }
+
+    /* Features Layout */
+    .side-way, .features-flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .content-side, .side-way2 {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .lapi-image img, .container-image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Partners Section */
+    .partner-logos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    /* Testimonials */
+    .testimonial {
+        padding: 20px;
+    }
+
+    .quote {
+        font-size: 16px;
+    }
+
+    /* Pricing Grid */
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .price-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    /* Contact Section */
+    .contact-inner {
+        flex-direction: column;
+    }
+
+    .form-section, .info-section {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 480px) {
+    /* Header */
+    .logo-text img {
+        max-width: 120px;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        padding: 15px;
+    }
+
+    /* Partners Section */
+    .partner-logos {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .logo-box {
+        padding: 15px;
+        min-height: 100px;
+    }
+    
+    .partner-logos img {
+        max-width: 150px;
+    }
+    
+    .client-name {
+        font-size: 12px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .contact-item {
+        justify-content: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+/* Tablet Landscape */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .partner-logos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Better touch targets for mobile */
+@media (hover: none) and (pointer: coarse) {
+    button, 
+    .btn,
+    .nav-list a,
+    .social-links a {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 20px;
+    }
+
+    .nav-list {
+        gap: 16px;
+    }
+}
+
+/* Improve form elements on mobile */
+@media screen and (max-width: 768px) {
+    input,
+    textarea,
+    select {
+        font-size: 16px; /* Prevent zoom on iOS */
+        padding: 12px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+}
+
+/* Handle notched displays */
+@supports (padding: max(0px)) {
+    .header-inner {
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+    }
+    
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Improve performance on mobile */
+@media screen and (max-width: 768px) {
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .smooth-scroll {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Utility classes to replace layout <br> usage with semantic spans */
+.break--desktop { display: inline; }
+@media (min-width: 768px) {
+    /* On tablet+ show as block (force line break) */
+    .break--desktop { display: block; }
+}
+
+/* Always-force break */
+.break--block { display: block; }
+
+/* Force break and add small gap (use when explicit vertical spacing is needed) */
+.break--gap { display: block; margin-top: 6px; }
